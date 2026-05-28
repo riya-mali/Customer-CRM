@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Premium Operations Control</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700&family=Space+Grotesk:wght=400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .cyber-font { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#030712] text-[#f1f5f9] min-h-screen antialiased">
+
+    <nav class="border-b border-[#1f2937] bg-[#0b1329]/90 sticky top-0 z-50 backdrop-blur-md px-6 py-4 shadow-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-[#06b6d4] to-[#3b82f6] flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-[#06b6d4]/30">
+                    N
+                </div>
+                <div>
+                    <h1 class="cyber-font text-base font-bold text-white tracking-wide">Datastraw Operations Desk</h1>
+                    <p class="text-[10px] text-[#6b7280] uppercase tracking-widest font-mono">Secure Enterprise Ledger Core</p>
+                </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#022c22] text-[#34d399] border border-[#064e3b]">
+                    <span class="h-1.5 w-1.5 rounded-full bg-[#10b981] animate-pulse"></span> Matrix Link Secure
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="bg-[#0b1329] border border-[#1f2937] p-5 rounded-xl flex justify-between items-center shadow-lg">
+                <div>
+                    <p class="text-[10px] uppercase font-bold tracking-wider text-[#6b7280]">Total Registry Streams</p>
+                    <h3 id="m-total" class="cyber-font text-2xl font-bold mt-1 text-white">00</h3>
+                </div>
+                <div class="text-xl p-2.5 bg-[#111827] border border-[#374151] rounded-lg text-[#06b6d4]">📁</div>
+            </div>
+            <div class="bg-[#0b1329] border border-[#1f2937] p-5 rounded-xl flex justify-between items-center shadow-lg">
+                <div>
+                    <p class="text-[10px] uppercase font-bold tracking-wider text-[#6b7280]">Active Diagnostics</p>
+                    <h3 id="m-pending" class="cyber-font text-2xl font-bold mt-1 text-[#f59e0b]">00</h3>
+                </div>
+                <div class="text-xl p-2.5 bg-[#111827] border border-[#374151] rounded-lg text-[#f59e0b]">⏳</div>
+            </div>
+            <div class="bg-[#0b1329] border border-[#1f2937] p-5 rounded-xl flex justify-between items-center shadow-lg">
+                <div>
+                    <p class="text-[10px] uppercase font-bold tracking-wider text-[#6b7280]">Terminated Complete</p>
+                    <h3 id="m-done" class="cyber-font text-2xl font-bold mt-1 text-[#10b981]">00</h3>
+                </div>
+                <div class="text-xl p-2.5 bg-[#111827] border border-[#374151] rounded-lg text-[#10b981]">🛡️</div>
+            </div>
+        </div>
+
+        <div id="view-dashboard-hub" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <section class="lg:col-span-4 bg-[#0b1329] border border-[#1f2937] rounded-xl p-5 shadow-xl h-fit">
+                <div class="mb-5 border-b border-[#1f2937] pb-3">
+                    <h2 class="cyber-font text-sm font-bold text-[#06b6d4] uppercase tracking-wide">Log New Telemetry</h2>
+                    <p class="text-xs text-[#6b7280]">Ingest case data statements into workbook matrices</p>
+                </div>
+
+                <form id="nexus-submission-form" class="space-y-4">
+                    <div>
+                        <label class="block text-[11px] font-semibold text-[#9ca3af] mb-1">Customer Identifier Name</label>
+                        <input type="text" id="inp-name" required placeholder="Ex: Rahul Kumar" 
+                               class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[#06b6d4]">
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-[#9ca3af] mb-1">Customer Email Destination</label>
+                        <input type="email" id="inp-email" required placeholder="name@company.com" 
+                               class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[#06b6d4]">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-[#9ca3af] mb-1">Issue Topic</label>
+                            <input type="text" id="inp-subject" required placeholder="UI Glitch" 
+                                   class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[#06b6d4]">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-[#9ca3af] mb-1">Severity Flag</label>
+                            <select id="inp-priority" class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#06b6d4]">
+                                <option value="Standard">Standard</option>
+                                <option value="Elevated">Elevated</option>
+                                <option value="SLA Critical">SLA Critical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[11px] font-semibold text-[#9ca3af] mb-1">Incident Scenario Logs</label>
+                        <textarea id="inp-description" rows="3" required placeholder="Describe core logs error..." 
+                                  class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[#06b6d4] resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-[#06b6d4] to-[#3b82f6] hover:from-[#22d3ee] hover:to-[#60a5fa] text-black font-bold py-2.5 px-4 rounded-lg text-xs uppercase tracking-wider transition-all cursor-pointer">
+                        Commit Payload Entry
+                    </button>
+                </form>
+            </section>
+
+            <section class="lg:col-span-8 space-y-4">
+                <div class="bg-[#0b1329] border border-[#1f2937] p-4 rounded-xl flex flex-col sm:flex-row gap-3 items-center shadow-lg">
+                    <div class="w-full sm:w-2/3">
+                        <input type="text" id="search-filter-input" placeholder="Type to search dynamically over names, hashes, emails..." 
+                               class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-white placeholder-[#4b5563] focus:outline-none focus:border-[#06b6d4]">
+                    </div>
+                    <div class="w-full sm:w-1/3">
+                        <select id="status-filter-select" class="w-full bg-[#111827] border border-[#1f2937] rounded-lg p-2.5 text-xs text-[#9ca3af] focus:outline-none focus:border-[#06b6d4]">
+                            <option value="">All Operational Statuses</option>
+                            <option value="Open">Open</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-[#0b1329] border border-[#1f2937] rounded-xl overflow-hidden shadow-2xl">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-[#111827] border-b border-[#1f2937] text-[11px] font-bold uppercase tracking-wider text-[#6b7280]">
+                                    <th class="p-4 pl-6">Reference ID</th>
+                                    <th class="p-4">Customer</th>
+                                    <th class="p-4">Subject</th>
+                                    <th class="p-4">Severity Tier</th>
+                                    <th class="p-4">Lifecycle State</th>
+                                    <th class="p-4 text-center">Action Grid</th>
+                                </tr>
+                            </thead>
+                            <tbody id="nexus-table-view-injection" class="divide-y divide-[#1f2937] text-xs text-[#d1d5db]">
+                                <tr>
+                                    <td colspan="6" class="p-12 text-center text-[#6b7280] font-mono">
+                                        Fetching core network dataset...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="view-inspection-workspace" class="hidden space-y-4">
+            <button onclick="closeInspectionPanel()" class="text-xs font-bold text-[#06b6d4] hover:text-[#22d3ee] transition-all flex items-center gap-1 cursor-pointer">
+                &larr; Return to Central Stream Interface Pipeline
+            </button>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-8 bg-[#0b1329] border border-[#1f2937] rounded-xl p-6 space-y-5 shadow-2xl">
+                    <div class="flex justify-between items-center bg-[#111827] p-4 rounded-xl border border-[#1f2937]">
+                        <div>
+                            <span class="text-[9px] text-[#6b7280] block font-bold uppercase">Token Identity Index</span>
+                            <h2 id="lbl-id" class="cyber-font text-base font-bold text-[#06b6d4]"></h2>
+                        </div>
+                        <span id="lbl-status" class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs border-b border-[#1f2937] pb-4">
+                        <div>
+                            <strong class="text-[#6b7280] text-[10px] block uppercase tracking-wider mb-0.5">Contact Node</strong>
+                            <span id="lbl-name" class="font-bold text-white text-sm"></span>
+                        </div>
+                        <div>
+                            <strong class="text-[#6b7280] text-[10px] block uppercase tracking-wider mb-0.5">Email Destination</strong>
+                            <span id="lbl-email" class="font-mono text-[#9ca3af]"></span>
+                        </div>
+                        <div>
+                            <strong class="text-[#6b7280] text-[10px] block uppercase tracking-wider mb-0.5">Assigned Gravity</strong>
+                            <span id="lbl-priority" class="font-bold"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong class="text-[#6b7280] text-[10px] block uppercase tracking-wider mb-1">Subject Header</strong>
+                        <p id="lbl-subject" class="font-bold text-white text-base"></p>
+                    </div>
+
+                    <div class="bg-[#111827] p-4 rounded-xl border border-[#1f2937]">
+                        <strong class="text-[#6b7280] text-[10px] block uppercase tracking-wider mb-1.5">Narrative Diagnostics Summary</strong>
+                        <p id="lbl-desc" class="whitespace-pre-wrap text-xs text-[#9ca3af] leading-relaxed"></p>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="bg-[#0b1329] border border-[#1f2937] rounded-xl p-5 shadow-xl">
+                        <h3 class="cyber-font text-xs font-bold text-white uppercase tracking-wide mb-3">Process System Mutation</h3>
+                        <form id="nexus-mutation-form" class="space-y-3">
+                            <div>
+                                <label class="text-[10px] text-[#9ca3af] font-semibold block mb-1">Lifecycle State Mutation</label>
+                                <select id="change-status" class="w-full bg-[#111827] border border-[#1f2937] p-2.5 rounded-lg text-xs text-white focus:outline-none focus:border-[#06b6d4]">
+                                    <option value="Open">Open</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Closed">Closed</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-[10px] text-[#9ca3af] font-semibold block mb-1">Append Historic Memo Card</label>
+                                <textarea id="change-notes" placeholder="Write operational update comments..." rows="3" class="w-full bg-[#111827] border border-[#1f2937] p-2.5 rounded-lg text-xs text-white focus:outline-none focus:border-[#06b6d4] resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#06b6d4] hover:bg-[#0891b2] text-black font-bold py-2.5 rounded-lg text-xs uppercase tracking-wide transition-all cursor-pointer">
+                                Push Lifecycle Sync
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-[#0b1329] border border-[#1f2937] rounded-xl p-5 shadow-xl">
+                        <h3 class="cyber-font text-xs font-bold text-white uppercase tracking-wide mb-2.5">Audit Log History</h3>
+                        <div id="nexus-audit-trail-logs" class="space-y-2.5 max-h-48 overflow-y-auto pr-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let virtualBufferStore = [];
+        let globalSelectedIdReference = "";
+
+        function loadMainDatasetStream() {
+            google.script.run.withSuccessHandler(function(rawJsonString) {
+                virtualBufferStore = JSON.parse(rawJsonString);
+                renderNexusInterface(virtualBufferStore);
+            }).downloadMatrixStream();
+        }
+
+        function renderNexusInterface(recordsDataset) {
+            const outputContainer = document.getElementById('nexus-table-view-injection');
+            outputContainer.innerHTML = '';
+            
+            let masterCount = recordsDataset.length;
+            let openReviewCount = recordsDataset.filter(r => r.status === 'In Progress').length;
+            let absoluteClosedCount = recordsDataset.filter(r => r.status === 'Closed').length;
+            
+            document.getElementById('m-total').innerText = masterCount < 10 ? '0' + masterCount : masterCount;
+            document.getElementById('m-pending').innerText = openReviewCount < 10 ? '0' + openReviewCount : openReviewCount;
+            document.getElementById('m-done').innerText = absoluteClosedCount < 10 ? '0' + absoluteClosedCount : absoluteClosedCount;
+
+            if(!recordsDataset || recordsDataset.length === 0) {
+                outputContainer.innerHTML = `<tr><td colspan="6" class="p-12 text-center text-[#4b5563] italic">No active ledger pipelines stored.</td></tr>`;
+                return;
+            }
+            
+            recordsDataset.forEach(row => {
+                let badgeStyle = '';
+                if(row.status === 'Closed') badgeStyle = 'bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20';
+                else if(row.status === 'In Progress') badgeStyle = 'bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/20';
+                else badgeStyle = 'bg-[#ef4444]/10 text-[#ef4444] border border-[#ef4444]/20';
+
+                let priorityStyle = 'text-[#6b7280]';
+                if(row.priority === 'SLA Critical') priorityStyle = 'text-[#ef4444] font-bold';
+                else if(row.priority === 'Elevated') priorityStyle = 'text-[#3b82f6] font-semibold';
+                
+                outputContainer.innerHTML += `
+                    <tr class="hover:bg-[#111827]/60 border-b border-[#1f2937] transition-all">
+                        <td class="p-4 pl-6 font-mono font-bold text-[#06b6d4]">${row.ticket_id}</td>
+                        <td class="p-4 font-semibold text-white">${row.customer_name}</td>
+                        <td class="p-4 truncate max-w-[130px] text-[#9ca3af]">${row.subject}</td>
+                        <td class="p-4 text-[11px] ${priorityStyle}">◈ ${row.priority || 'Standard'}</td>
+                        <td class="p-4"><span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${badgeStyle}">${row.status}</span></td>
+                        <td class="p-4 text-center">
+                            <button onclick="openInspectionPanel('${row.ticket_id}')" class="bg-[#111827] hover:bg-[#06b6d4] border border-[#374151] hover:border-[#06b6d4] text-[#9ca3af] hover:text-black font-bold py-1 px-3 rounded text-[10px] uppercase tracking-widest transition-all cursor-pointer">
+                                Manage
+                            </button>
+                        </td>
+                    </tr>`;
+            });
+        }
+
+        document.getElementById('search-filter-input').addEventListener('input', triggerNexusSearchFilters);
+        document.getElementById('status-filter-select').addEventListener('change', triggerNexusSearchFilters);
+
+        function triggerNexusSearchFilters() {
+            const queryText = document.getElementById('search-filter-input').value.toLowerCase();
+            const chosenState = document.getElementById('status-filter-select').value;
+            
+            let matchingSubset = virtualBufferStore.filter(item => {
+                const conditionState = chosenState === "" || item.status === chosenState;
+                const conditionText = item.customer_name.toLowerCase().includes(queryText) || 
+                                     item.ticket_id.toLowerCase().includes(queryText) || 
+                                     item.subject.toLowerCase().includes(queryText) || 
+                                     item.description.toLowerCase().includes(queryText) ||
+                                     item.customer_email.toLowerCase().includes(queryText);
+                return conditionState && conditionText;
+            });
+            renderNexusInterface(matchingSubset);
+        }
+
+        // FIXED SUBMISSION HANDLING LOGIC
+        document.getElementById('nexus-submission-form').addEventListener('submit', function(ev) {
+            ev.preventDefault();
+            
+            const outPacket = {
+                customer_name: document.getElementById('inp-name').value.trim(),
+                customer_email: document.getElementById('inp-email').value.trim(),
+                subject: document.getElementById('inp-subject').value.trim(),
+                priority: document.getElementById('inp-priority').value,
+                description: document.getElementById('inp-description').value.trim()
+            };
+            
+            google.script.run.withSuccessHandler(function() {
+                alert("Ticket Logged Successfully!");
+                document.getElementById('nexus-submission-form').reset();
+                loadMainDatasetStream();
+            }).injectNewServiceTicket(outPacket);
+        });
+
+        function openInspectionPanel(uniqueId) {
+            globalSelectedIdReference = uniqueId;
+            google.script.run.withSuccessHandler(function(serializedNodeJson) {
+                const objectPayload = JSON.parse(serializedNodeJson);
+                document.getElementById('lbl-id').innerText = objectPayload.ticket_id;
+                document.getElementById('lbl-name').innerText = objectPayload.customer_name;
+                document.getElementById('lbl-email').innerText = objectPayload.customer_email;
+                document.getElementById('lbl-subject').innerText = objectPayload.subject;
+                document.getElementById('lbl-priority').innerText = objectPayload.priority || 'Standard';
+                document.getElementById('lbl-desc').innerText = objectPayload.description;
+                document.getElementById('change-status').value = objectPayload.status;
+                
+                const priorityLabel = document.getElementById('lbl-priority');
+                if(objectPayload.priority === 'SLA Critical') priorityLabel.className = 'text-[#ef4444] font-bold';
+                else if(objectPayload.priority === 'Elevated') priorityLabel.className = 'text-[#3b82f6] font-semibold';
+                else priorityLabel.className = 'text-[#6b7280]';
+
+                const targetBadge = document.getElementById('lbl-status');
+                targetBadge.innerText = objectPayload.status;
+                
+                if(objectPayload.status === 'Closed') {
+                    targetBadge.className = 'px-2.5 py-0.5 rounded bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 text-[10px] font-bold uppercase tracking-wider';
+                } else if(objectPayload.status === 'In Progress') {
+                    targetBadge.className = 'px-2.5 py-0.5 rounded bg-[#f59e0b]/10 text-[#f59e0b] border border-[#f59e0b]/20 text-[10px] font-bold uppercase tracking-wider';
+                } else {
+                    targetBadge.className = 'px-2.5 py-0.5 rounded bg-[#ef4444]/10 text-[#ef4444] border border-[#ef4444]/20 text-[10px] font-bold uppercase tracking-wider';
+                }
+
+                const historicNotesContainer = document.getElementById('nexus-audit-trail-logs');
+                historicNotesContainer.innerHTML = !objectPayload.notes || objectPayload.notes.length === 0 ? '<p class="text-[10px] text-[#4b5563] font-mono italic">No historic entries found.</p>' : '';
+                
+                if(objectPayload.notes) {
+                    objectPayload.notes.forEach(note => {
+                        historicNotesContainer.innerHTML += `
+                            <div class="bg-[#111827] p-3 rounded-lg border border-[#1f2937] text-[11px] font-mono shadow-inner">
+                                <p class="text-[#d1d5db] leading-relaxed">${note.note_text}</p>
+                                <span class="text-[9px] text-[#4b5563] block mt-1.5 font-bold">${new Date(note.created_at).toLocaleString()}</span>
+                            </div>`;
+                    });
+                }
+
+                document.getElementById('view-dashboard-hub').classList.add('hidden');
+                document.getElementById('view-inspection-workspace').classList.remove('hidden');
+            }).extractSingleIdentityBlock(uniqueId);
+        }
+
+        function closeInspectionPanel() {
+            document.getElementById('view-dashboard-hub').classList.remove('hidden');
+            document.getElementById('view-inspection-workspace').classList.add('hidden');
+            loadMainDatasetStream();
+        }
+
+        document.getElementById('nexus-mutation-form').addEventListener('submit', function(eventObj) {
+            eventObj.preventDefault();
+            const matrixMutationPacket = {
+                ticket_id: globalSelectedIdReference,
+                status: document.getElementById('change-status').value,
+                notes: document.getElementById('change-notes').value
+            };
+            google.script.run.withSuccessHandler(function() {
+                alert("Matrix Sync Dynamic Mutation Operational.");
+                document.getElementById('change-notes').value = "";
+                openInspectionPanel(globalSelectedIdReference);
+            }).modifyServiceTicketState(matrixMutationPacket);
+        });
+
+        window.onload = loadMainDatasetStream;
+    </script>
+</body>
+</html>
